@@ -34,3 +34,32 @@ def generate_values(data: pd.DataFrame, columns: List[str],
     return data
         
 # %%
+generate_values(data = data, columns='bounce_rate', start_value=5, 
+                end_value=20)
+# %%
+generate_values(data, columns='new_user', start_value=20,
+                end_value=500)
+# %%
+generate_values(data, columns='return_user', start_value=100,
+                end_value=300)
+# %%
+generate_values(data=data, columns='new_user_con_rate',
+                start_value=50, end_value=70)
+# %%
+generate_values(data=data, columns='return_user_con_rate',
+                start_value=70, end_value=95)
+
+# %%
+generate_values(data=data, columns='new_user_bounce_rate',
+                start_value=10, end_value=30)
+# %%
+generate_values(data=data, columns='return_user_bounce_rate',
+                start_value=5, end_value=10)
+# %%
+
+data.to_csv('Data/new_data.csv')
+
+
+
+
+# %%
