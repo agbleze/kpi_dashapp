@@ -4,7 +4,7 @@ cardimg_style = {'width': '100%', 'height': '100%',
 cardbody_style = {"margin": "2%"}
 
 cardstyling = {"maxWidth": 195,
-               "backgroundColor": "#e4ac23",
+               "backgroundColor": "#00624e",
             }
 
 card_style = {"width": "20rem", "height": "20rem"}
@@ -23,15 +23,8 @@ homepage_icon_style = {
                         "width": "100%",
                         }
 
+page_style = {"backgroundColor": "#00624e"}
 
-page_style = {"backgroundColor": "#FF8B00"}
-
-input_style={"color": '#0088BC'}
-
-button_style = {"backgroundColor": "#0088BC"}
-
-
-
-
+button_style = {"backgroundColor": "#fff000"}
 
 
