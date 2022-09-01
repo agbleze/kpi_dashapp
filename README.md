@@ -5,3 +5,7 @@ Requirement
 
 
 ### Running the app
+The app can be run using the command in the terminal below
+```
+python app.py
+```
