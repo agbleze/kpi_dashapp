@@ -2,3 +2,6 @@
 This repo demonstrates buinding a dash web application
 
 Requirement
+
+
+### Running the app
