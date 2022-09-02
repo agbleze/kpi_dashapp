@@ -38,13 +38,14 @@ main_layout = html.Div(
 app_description = dbc.Container(
     style=page_style,
     children=[
-        dbc.Row(html.H2("KPI Dashboard")),
+        html.Br(), html.Br(),
         
         dbc.Row(
             children=[
                 dbc.Col(),
                 dbc.Col(
                     [
+                        html.H2("KPI Dashboard"),
                         dbc.Card(
                             [
                                 dbc.CardImg(
@@ -58,7 +59,6 @@ app_description = dbc.Container(
                                             [
                                                 dbc.CardBody(
                                                     html.H1(
-                                                        "Key Performance Indicator",
                                                         style={"margin": "5%"},
                                                     )
                                                 )
