@@ -102,7 +102,7 @@ def compute_kpi(year_selected: str, month_selected: str):
               Input(component_id='id_user_year_dropdown', component_property='value'),
               Input(component_id='id_user_month_dropdown', component_property='value')
               )
-def compute_kpi(user_year_selected: str, user_month_selected: str):
+def compute_usertype_kpi(user_year_selected: str, user_month_selected: str):
     if not(user_year_selected and user_month_selected):
         PreventUpdate
     else:
