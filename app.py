@@ -8,8 +8,11 @@ from builders import (kpi_sidebar_layout, kpi_layout,
                       usertype_kpi_layout, main_layout,
                       app_description, intro_layout)
 from helper_components import plot_barplot
+from kpi_utils import get_path
 
-data=pd.read_csv(r"Data/new_data.csv")
+data_path = get_path(folder_name='Data', file_name='new_data.csv')
+
+data = pd.read_csv(data_path)
 # %%
 app = dash.Dash(__name__, external_stylesheets=[
                                                 dbc.themes.SOLAR,
@@ -67,7 +70,7 @@ def sidebar_display(home: str, kpi: str, usertype_kpi: str):
               )
 def compute_kpi(year_selected: str, month_selected: str):
     if not(year_selected and month_selected):
-        PreventUpdate
+        raise PreventUpdate
     else:
         conrate = (data[(data["Year"]== year_selected) & 
                         (data["Month"] == month_selected)]
@@ -104,12 +107,12 @@ def compute_kpi(year_selected: str, month_selected: str):
               )
 def compute_usertype_kpi(user_year_selected: str, user_month_selected: str):
     if not(user_year_selected and user_month_selected):
-        PreventUpdate
+        raise PreventUpdate
     else:
         newuser_conrate = (data[(data["Year"]== user_year_selected) & 
                         (data["Month"] == user_month_selected)]
                    ['new_user_con_rate'].item()
-                   )
+                   )#.sort()
         newuser_bounce_rate = (data[(data["Year"]== user_year_selected) & 
                         (data["Month"] == user_month_selected)]
                    ['new_user_bounce_rate'].item()
