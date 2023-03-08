@@ -4,13 +4,13 @@ import dash
 from dash import html, dcc, Input, Output
 import dash_bootstrap_components as dbc
 from dash.exceptions import PreventUpdate
-from builders import (kpi_sidebar_layout, kpi_layout, 
+from kpi_dashapp_demo.builders import (kpi_sidebar_layout, kpi_layout, 
                       usertype_kpi_layout, main_layout,
                       app_description, intro_layout)
-from helper_components import plot_barplot
-from kpi_utils import get_path
+from kpi_dashapp_demo.helper_components import plot_barplot
+from kpi_dashapp_demo.kpi_utils import get_path
 
-data_path = get_path(folder_name='Data', file_name='new_data.csv')
+data_path = get_path(folder_name='kpi_dashapp_demo/Data', file_name='new_data.csv')
 
 data = pd.read_csv(data_path)
 # %%

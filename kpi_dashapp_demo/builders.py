@@ -1,21 +1,31 @@
 #%%
 import dash_bootstrap_components as dbc
 from dash import html, dcc
-from style import homepage_icon_style, page_style, cardstyling
+from kpi_dashapp_demo.style import homepage_icon_style, page_style, cardstyling
 import dash_trich_components as dtc
-from helper_components import output_card
+from kpi_dashapp_demo.helper_components import output_card
 import pandas as pd
 from PIL import Image
+from kpi_dashapp_demo.kpi_utils import get_path
 #%%
-img_kpi = Image.open('img/kpi.png')
-img_scq = Image.open('img/SCQ.png')
-#%%
-data=pd.read_csv(r"Data/new_data.csv")
 
+img_kpi_path = get_path(folder_name='kpi_dashapp_demo/img', file_name='kpi.png')
+img_scq_path = get_path(folder_name='kpi_dashapp_demo/img', file_name='SCQ.png')
+
+img_kpi = Image.open(img_kpi_path)
+
+img_scq = Image.open(img_scq_path)
+#%%
+data_path = get_path(folder_name='kpi_dashapp_demo/Data', 
+                     file_name='new_data.csv'
+                    )
+data=pd.read_csv(data_path)
+
+#%%
 main_layout = html.Div(
     [
         dbc.NavbarSimple(
-            brand="Dental21",
+            brand="Company",
             brand_href="/",
             light=True,
             brand_style={"color": "#FFFFFF", "backgroundColor": "#00624e"},
